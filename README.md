@@ -1,69 +1,89 @@
-# React + TypeScript + Vite
+# 🧪 Front End Web Developer – Technical Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a technical test submission for the Front End Web Developer position at **PT Bullion Ecosystem International**. It includes three main pages: **Login**, **Register**, and **Admin Dashboard** with full API integration and validation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
 
-## Expanding the ESLint configuration
+### 🔐 Login Page
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [x] UI slicing based on given design
+- [x] Form validation
+  - Email: required & must be in valid format
+  - Password: required & minimum 8 characters
+- [x] API integration for login
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📝 Register Page
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- [x] UI slicing based on given design
+- [x] Form validation
+  - First Name, Last Name, Gender, DOB, Phone, Address, Photo: required
+  - Email: required & must be in email format
+  - Password: required, minimum 8 characters, contains capital, number, and alphabet
+  - Confirm Password: required & must match password
+  - Profile Photo: JPG/JPEG, max 5MB
+- [x] API integration for registration
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📊 Admin Dashboard
+
+- [x] Slicing Dashboard layout
+- [x] Display registered user list via API
+- [x] Show profile photo
+- [x] View and edit user detail via API
+  - Get user detail
+  - Update user info
+
+---
+
+## 🧪 Expectations Fulfilled
+
+- ✅ Admin can log in using provided account
+- ✅ Admin can register new users
+- ✅ Admin can view the list of registered users
+- ✅ Admin can view profile photos
+- ✅ Admin can view and edit detailed user information
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- **React 19** – UI library
+- **React Router v7** – for page navigation
+- **React Hook Form + Zod** – form handling and schema validation
+- **Tailwind CSS v4** – utility-first styling
+- **React Icons** – icon set
+
+### Data Handling & Utilities
+
+- **Axios** – HTTP client for API calls
+- **@tanstack/react-query** – API state and caching
+- **Day.js** – date manipulation
+- **CryptoJS** – data encryption
+- **js-cookie** – handling browser cookies
+- **React Paginate** – pagination UI component
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/technical-test-bullion.git
+cd technical-test-bullion
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 3. Run the Project
+
+```bash
+npm run dev
 ```
